@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:introduce_to_widgets/screens/carousel.dart';
+import 'package:introduce_to_widgets/screens/main_menu.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -69,9 +74,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter layout demo',
         home: Scaffold(
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.red[200],
             drawer: ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 150),
+              constraints: BoxConstraints(maxWidth: 200),
               child: Drawer(
                 child: ListView(
                   padding: EdgeInsets.zero,
@@ -135,7 +140,8 @@ class MyApp extends StatelessWidget {
                           ),
                         )
                       ],
-                    )
+                    ),
+                    MainMenu()
                   ],
                 ),
               ),
@@ -148,15 +154,16 @@ class MyApp extends StatelessWidget {
             ),
             body: ListView(
               children: [
+                MyStatefulWidget2(),
+                titleSection,
+                buttonSection,
                 Image.asset(
                   'images/lake.jpg',
                   width: 600,
                   height: 240,
                   fit: BoxFit.cover,
                 ),
-                titleSection,
-                buttonSection,
-                textSection
+                textSection,
               ],
             )));
   }
